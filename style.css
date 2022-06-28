@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(0, 100%, 74%) url("bg-intro-desktop.png");
+  background-size: cover;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  width: 80%;
+  margin: 0 auto;
+}
+
+main {
+  margin-top: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+  transform: translateY(-50%);
+}
+
+form {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+}
+
+input {
+  display: block;
+  /* margin-bottom: 12px; */
+  width: 90%;
+  margin: 20px auto 5px auto;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  padding-left: 20px;
+}
+
+.enter-text:focus {
+  outline: 1px solid hsl(246, 25%, 77%);
+}
+.text-container {
+  flex: 1;
+}
+
+.text-container p {
+  line-height: 1.5;
+  word-spacing: -1px;
+}
+
+.form-container {
+  flex: 1;
+}
+
+.form-container p:first-child {
+  background-color: hsl(248, 32%, 49%);
+  margin-bottom: 20px;
+  padding: 16px 32px;
+  text-align: center;
+  border-radius: 8px;
+  width: 80%;
+  box-shadow: 0 6px rgba(0, 0, 0, 0.18);
+}
+
+.form-container p:last-child {
+  color: #adb5bd;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.terms-and-services {
+  color: hsl(0, 100%, 74%);
+  font-weight: 700;
+}
+
+.submit {
+  background-color: hsl(154, 59%, 51%);
+  text-transform: uppercase;
+  padding: 0;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.submit:hover {
+  opacity: 0.9;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 42px;
+  word-spacing: -5px;
+}
+
+::placeholder {
+  opacity: 0.6;
+}
+
+.input-container {
+  align-items: center;
+  /* margin: 20px auto 5px auto; */
+  position: relative;
+}
+
+.icon {
+  color: #ff7a7a;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.error-display {
+  color: hsl(0, 100%, 74%) !important;
+  text-align: right;
+  margin-right: 5%;
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+  }
+
+  .submit {
+    font-size: 12px;
+  }
+}
