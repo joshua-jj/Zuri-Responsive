@@ -140,7 +140,7 @@ h1 {
   main {
     flex-direction: column;
     height: 100vh;
-    margin-top: 2rem;
+    margin-top: 2rem !important;
   }
 
   .submit {
