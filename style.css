@@ -139,7 +139,6 @@ h1 {
 @media screen and (max-width: 375px) {
   main {
     flex-direction: column;
-    margin-top: 2rem;
     height: 100vh;
   }
 
