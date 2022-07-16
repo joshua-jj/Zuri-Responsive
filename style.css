@@ -167,9 +167,4 @@ h1 {
   form {
     margin: 0 auto;
   }
-
-  .input-container small {
-    position: absolute;
-    left: 2rem;
-}
 }
