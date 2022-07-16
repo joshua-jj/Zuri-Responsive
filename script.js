@@ -11,6 +11,13 @@ form.addEventListener('submit', (e) => {
     checkInputs();
 });
 
+form.addEventListener("keypress", (e) => {
+    if (e.key ==='Enter'){
+        e.preventDefault();
+        checkInputs();
+    }
+});
+
 function checkInputs() {
     const fnameValue = fname.value.trim();
     const lnameValue = lname.value.trim();
