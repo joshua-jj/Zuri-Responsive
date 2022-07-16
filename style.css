@@ -130,6 +130,7 @@ h1 {
 
 .input-container.success input {
   border-color: #dee2e6;
+  background-color: #fff;
 }
 
 .input-container.error input {
