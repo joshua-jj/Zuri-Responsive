@@ -137,14 +137,20 @@ h1 {
 }
 
 .input-container.error .fa-circle-exclamation {
-  color: #ff7a7a;
+  visibility: visible;
+}
+
+.input-container.success .fa-circle-exclamation {
+  visibility: hidden;
 }
 
 .fa-circle-exclamation {
+  color: #ff7a7a;
   position: absolute;
   top: 50%;
   right: 10%;
   transform: translateY(-50%);
+  visibility: hidden;
 }
 
 @media screen and (max-width: 375px) {
@@ -161,4 +167,9 @@ h1 {
   form {
     margin: 0 auto;
   }
+
+  .input-container small {
+    position: absolute;
+    left: 2rem;
+}
 }
