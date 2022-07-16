@@ -5,33 +5,59 @@ const fname = document.querySelector('.fname');
 const lname = document.querySelector('.lname');
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
-const textInput = document.querySelector('.enter-text');
-// const submitForm = document.querySelector('.submit');
 
 form.addEventListener('submit', (e) => {
-    if (fname.value === '' || fname.value === null) {
-        e.preventDefault();
-        document.querySelector('.error-display-fname').classList.remove('hidden');
-        document.querySelector('.icon-fname').classList.add('fa-circle-exclamation');
-        fname.style.borderColor = 'hsl(0, 100%, 74%)';
-    }
-    if (lname.value === '' || lname.value === null) {
-        e.preventDefault();
-        document.querySelector('.error-display-lname').classList.remove('hidden');
-        document.querySelector('.icon-lname').classList.add('fa-circle-exclamation');
-        lname.style.borderColor = "hsl(0, 100%, 74%)";
-    }
-    if (email.value === '' || email.value === null) {
-        e.preventDefault();
-        document.querySelector('.error-display-email').classList.remove('hidden');
-        document.querySelector('.icon-email').classList.add('fa-circle-exclamation');
-        email.style.borderColor = "hsl(0, 100%, 74%)";
-    }
-    if (password.value === '' || password.value === null) {
-        e.preventDefault();
-        document.querySelector('.error-display-password').classList.remove('hidden');
-        document.querySelector('.icon-password').classList.add('fa-circle-exclamation');
-        password.style.borderColor = "hsl(0, 100%, 74%)";
+    e.preventDefault();
+    checkInputs();
+});
+
+function checkInputs() {
+    const fnameValue = fname.value.trim();
+    const lnameValue = lname.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(fnameValue == '') {
+        setError(fname, "First name cannot be empty");
+    } else {
+        setSuccess(fname);
     }
 
-});
+    if (lnameValue == "") {
+        setError(lname, "Last name cannot be empty");
+    } else {
+        setSuccess(lname);
+    }
+
+    if (emailValue == "") {
+        setError(email, "Email cannot be empty");
+    } else if(!validateEmail(emailValue)) {
+        setError(email, "Looks  like this is not an email");
+    } else {
+        setSuccess(email);
+    }
+
+    if (passwordValue == "") {
+        setError(password, "Password cannot be empty");
+    } else {
+        setSuccess(password);
+    }
+}
+
+function setError(input, message) {
+    const inputContainer = input.parentElement;
+    const small = inputContainer.querySelector('small');
+    small.textContent = message;
+    inputContainer.classList.add('error');
+}
+
+function setSuccess(input) {
+    const inputContainer = input.parentElement;
+    inputContainer.classList.remove("error");
+    inputContainer.classList.add("success");
+}
+
+function validateEmail(email) {
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return email.match(regexEmail);
+}
